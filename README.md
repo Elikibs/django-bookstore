@@ -1,1 +1,1 @@
-# Bookstore Proj
+# Bookstore Project
