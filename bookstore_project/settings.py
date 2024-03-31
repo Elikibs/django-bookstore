@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third-party
+    "crispy_forms",
+    "crispy_bootstrap5"
     # Local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -135,8 +138,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Tell django to use the custom user model in place of the built-in user model
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-# Login redirect
+# Login/Logout redirect pages
 LOGIN_REDIRECT_URL = "home"
-
-# Logout redirect
 LOGOUT_REDIRECT_URL = "home"
+
+# Include form third party configurations
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
