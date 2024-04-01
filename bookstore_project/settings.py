@@ -37,13 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # Third-party
     "crispy_forms",
-    "crispy_bootstrap5"
+    "crispy_bootstrap5",
+    "allauth",
+    "allauth.account",
     # Local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'bookstore_project.urls'
@@ -138,10 +143,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Tell django to use the custom user model in place of the built-in user model
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-# Login/Logout redirect pages
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
-
 # Include form third party configurations
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# django-allauth config
+LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_REDIRECT = "home"
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+# Email configuration
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
