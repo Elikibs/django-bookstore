@@ -10,6 +10,8 @@ services:
       - 8000:8000
     depends_on:
       - db
+    environment:
+      - "django-insecure-7sp!+c^@3$&0v)m&w7y=qjhf8ops@+8#+@9kp%qpv8y@@77a#u"
   db:
     image: postgres:13
     volumes:
