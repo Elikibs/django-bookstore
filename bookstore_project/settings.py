@@ -172,4 +172,4 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 # Email configuration
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBacken"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
