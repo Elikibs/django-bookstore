@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'bookstore_project.wsgi.application'
 
 DATABASES = {
     'default': env.dj_db_url("DATABASE_URL",
-    default="postgres://postgres@db/postgresn")
+    default="postgres://postgres@db/postgres")
 }
 
 
