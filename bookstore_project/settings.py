@@ -35,13 +35,13 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admi',
-    'django.contrib.aut',
+    'django.contrib.admi', # n
+    'django.contrib.aut', # s
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.site',
+    'django.contrib.site', # s
     # Third-party
     "crispy_forms",
     "crispy_bootstrap5",
